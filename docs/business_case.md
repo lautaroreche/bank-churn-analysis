@@ -4,7 +4,7 @@
 
 This project simulates the work of a Data Analyst embedded in the Retention Analytics team of a mid-sized European retail bank operating in France, Germany and Spain. The bank has observed a sustained increase in customer attrition over recent quarters and needs to understand the drivers behind it before allocating budget to retention initiatives.
 
-The analysis is built on a public dataset of 10000 bank customers, enriched with a synthetically generated transactional history that allows for behavioral and temporal analysis on top of the original demographic snapshot.
+The analysis uses a public dataset of 10000 bank customers. It is a snapshot, not a transactional history.
 
 ## 2. Stakeholder & Decision
 
@@ -32,6 +32,9 @@ This project distinguishes between two concepts:
 - **Soft churn (silent attrition):** the customer remains on the books but shows a sustained decline in activity: fewer transactions, lower balances, loss of direct deposit, reduced product usage. Soft churn is typically a leading indicator of hard churn in the near future.
 
 A robust retention strategy needs to address both. Detecting soft churn early is more valuable than reacting to hard churn after the fact, because the customer is still recoverable.
+
+This project focuses on hard churn only. The dataset is a snapshot and does not contain transactions, so soft churn cannot be measured here. It is left as a next step.
+
 
 ## 4. KPIs
 
@@ -64,6 +67,7 @@ To keep the project focused and avoid scope creep, the following are explicitly 
 - **Acquisition channel analysis:** the dataset does not contain reliable acquisition source data.
 - **Pricing optimization:** recommendations will be qualitative on the pricing front; quantitative pricing analysis is a separate project.
 - **Causal inference / experimentation design:** — the analysis identifies correlations and risk segments, not causal effects. A/B testing retention interventions is a logical follow-up but outside this scope.
+- **Soft churn analysis:** would require transactional data the dataset does not include.
 
 ## 7. Success Criteria
 
@@ -78,7 +82,6 @@ This project will be considered successful if it delivers:
 
 - **Data exploration & cleaning:** Python (Pandas), Excel for initial profiling.
 - **Data modeling & querying:** PostgreSQL (star schema).
-- **Synthetic data generation:** Python (NumPy).
 - **Visualization:** Power BI.
 - **Version control:** Git / GitHub.
 
